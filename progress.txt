@@ -1,0 +1,9 @@
+I've gotten up to the point of sending the login requests and parsing cookies.
+
+However, there is some issue with my login requests, which causes them to be invalid.
+
+It doesn't appear to be EVENT_VALIDATION being borked, atleast not completely, as even if I use "old" values, I'm still logged in just fine, while completely invalid EVENT_VALIDATION inputs causes me to be redirected to some "An error occured" page from a browser, which does not occur when sending the request with node-fetch.
+
+Maybe they have some sort of header validation that I don't know about, I can't see why it doesn't redirect me and log me in.
+
+However, if you replace the session cookie with a valid, manual login cookie, it works like a charm, so it's only an issue with getting said valid cookie automatically.
