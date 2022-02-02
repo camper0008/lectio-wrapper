@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [],
+    "module": "esnext",
+    "allowJs": false,
+    "sourceMap": true,
+    "outDir": "./build",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,                  
+    "noUnusedParameters": true,              
+    "noImplicitReturns": true,               
+    "skipLibCheck": true                     
+  },
+  "includes": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

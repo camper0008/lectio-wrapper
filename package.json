@@ -1,0 +1,17 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "start": "node build/main.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^15.0.0",
+    "node-fetch": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.14",
+    "typescript": "^4.5.5"
+  }
+}
