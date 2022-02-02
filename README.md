@@ -11,13 +11,15 @@ The `SCHOOL_ID` is found from the URL when you go on a school's page:
 
 The `STUDENT_ID` is found from the URL when you go on your schedule:
 
-[ insert link ]
+![image](https://user-images.githubusercontent.com/42157469/152216835-369420cc-fbcf-4775-81f7-5daffd4b2619.png)
 
 For example, if your UNI-Login was user1234 and pass1234 and you're enrolled at Bjerringbro Gymnasium, and had a student id of `01234567890` it would look like this:
 
 ```
 USERNAME=user1234
-STUDENT_ID=01234567890
 PASSWORD=pass1234
+STUDENT_ID=01234567890
 SCHOOL_ID=266
 ```
+
+You could also use another person's student id to view their schedule instead, provided you have access to that student normally. (E.g. can't view a student from a school unless your user is enrolled at that school)
