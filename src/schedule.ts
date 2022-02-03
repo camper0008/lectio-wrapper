@@ -1,5 +1,4 @@
-import fetch, { RequestInit, Headers } from "node-fetch";
-import { SessionCookies, getFormattedSessionCookies } from "./cookies.js";
+import { AxiosInstance } from "axios";
 
 const getScheduleLink = () => {
     const { SCHOOL_ID, STUDENT_ID } = process.env;
@@ -7,19 +6,10 @@ const getScheduleLink = () => {
     return link;
 }
 
-export const getScheduleHTML = async (sessionCookies: SessionCookies) => {
-    const cookie = getFormattedSessionCookies(sessionCookies);
+export const getScheduleHTML = async (client: AxiosInstance) => {
     const link = getScheduleLink();
-    const headers = new Headers({
-        cookie,
+    const res = await client.get(link, {
+        responseType: "document",
     });
-    const res = await fetch(link, {
-        headers,
-        method: "GET",
-        credentials: "include",
-        referrer: "https://www.lectio.dk/lectio/577/login.aspx",
-        mode: "cors"
-    } as RequestInit);
-    console.log(await res.text());
-
+    console.log(res.data);
 }
