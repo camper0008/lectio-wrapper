@@ -14,7 +14,10 @@ const loginRequestLink = () => {
 
 const fillClientWithLectioLoginCookies = async (client: AxiosInstance, validation: string) => {
     const data = loginRequestBody(validation);
-    const headers = {"Content-Type": "x-www-form-urlencoded"};
+    const headers = {
+        "Content-Type": "x-www-form-urlencoded",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
+    };
     const link = loginRequestLink();
     await client.post(link, {
         headers,
@@ -25,8 +28,12 @@ const fillClientWithLectioLoginCookies = async (client: AxiosInstance, validatio
 
 const lectioLoginGetResponse = async (client: AxiosInstance) => {
     const link = loginRequestLink();
+    const headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
+    };
     const res = await client.get(link, {
         responseType: "document",
+        headers
     });
     return res;
 }
